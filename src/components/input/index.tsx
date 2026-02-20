@@ -1,16 +1,16 @@
+import type { InputHTMLAttributes } from "react"
 
-interface InputInterface {
-    type: string,
-    eyeIcon: boolean
+interface InputInterface extends InputHTMLAttributes<HTMLInputElement> {
+    eyeIcon?: boolean
     userFunction?: () => void
 }
 
 
-function Input({ type, eyeIcon = false, userFunction }: InputInterface) { //props and destructering
+function Input({ eyeIcon = false, userFunction, ...rest }: InputInterface) { //props and destructering
 
     return (
         <div className="input">
-            <input type={type} />
+            <input  {...rest} />
 
             {eyeIcon === true && //conditional rendering 
                 <svg onClick={userFunction} height={24} width={24} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">

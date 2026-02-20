@@ -1,4 +1,5 @@
 import './App.css'
+import Counter from './components/counter'
 import Input from './components/input'
 
 function App() { //component
@@ -9,11 +10,13 @@ function App() { //component
 
   return (
     <>
-      <h1>Hello world</h1>
-      <Input type='text' eyeIcon={false} />
-      <Input type='number' eyeIcon={false} />
-      <Input type='password' eyeIcon={true} userFunction={getAlert} />
-      <Input type='email' eyeIcon={false} />
+      <h1>Tasbeeh Counter</h1>
+
+      <Counter />
+      <Input type='text' eyeIcon={true} placeholder='Enter your name' alt=''  />
+      <Input type='number' eyeIcon={false} placeholder='Enter your number' />
+      <Input type='password' eyeIcon={true} userFunction={getAlert} placeholder='Enter your password' />
+      <Input type='email' eyeIcon={false} placeholder='Enter your email' />
     </>
   )
 }
