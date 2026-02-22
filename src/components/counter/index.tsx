@@ -6,10 +6,10 @@ function Counter() {
     // var count = 0
 
     const incrementCounter = () => {
-        setCount(count + 1)
-        if(count >= 4){
-            setCount(0)
-        }
+        setCount(count + 1) //srf set state function se hi variable update hoga
+        // if(count >= 4){
+        //     setCount(0)
+        // }
     }
 
     const resetCounter = () =>{
