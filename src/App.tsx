@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router'
 import './App.css'
 import Counter from './components/counter'
 import Input from './components/input'
@@ -20,6 +21,8 @@ function App() { //component
       <Input type='email' eyeIcon={false} placeholder='Enter your email' /> */}
 
       <UsersList />
+      <NavLink to="/counter">Go to Counter</NavLink> <br />
+      <a href="/counter">Go to Counter</a>
     </>
   )
 }

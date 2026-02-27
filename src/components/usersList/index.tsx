@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router"
 
 interface UserDataInterface {
     email: string
@@ -11,6 +12,7 @@ interface UserDataInterface {
 
 function UsersList() {
     const [users, setUser] = useState([])
+    let navigate = useNavigate()
 
     useEffect(() => {
         getData()
@@ -20,6 +22,7 @@ function UsersList() {
     const getData = async () => {
         const response = await fetch("https://jsonplaceholder.typicode.com/users")
         const userData = await response.json()
+        navigate('/counter')
         setUser(userData)
     }
 
