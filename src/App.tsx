@@ -3,6 +3,7 @@ import './App.css'
 import Counter from './components/counter'
 import Input from './components/input'
 import UsersList from './components/usersList'
+import Example from './components/main-page'
 
 function App() { //component
 
@@ -21,6 +22,7 @@ function App() { //component
       <Input type='email' eyeIcon={false} placeholder='Enter your email' /> */}
 
       <UsersList />
+      <Example />
       <NavLink to="/counter">Go to Counter</NavLink> <br />
       <a href="/counter">Go to Counter</a>
     </>
