@@ -7,7 +7,7 @@ interface InputInterface extends InputHTMLAttributes<HTMLInputElement> {
 
 
 function Input({ eyeIcon = false, userFunction, ...rest }: InputInterface) { //props and destructering
-
+    
     return (
         <div className="input">
             <input  {...rest} />

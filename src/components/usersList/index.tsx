@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router"
 import axios from 'axios'
+import useFetch from "../../hooks/useFetch"
 
 interface UserDataInterface {
     email: string
     id: number
+    title: string
     name: string
     phone: string
     username: string
@@ -13,34 +15,36 @@ interface UserDataInterface {
 
 function UsersList() {
     const [users, setUser] = useState([])
+    const [data] = useFetch('https://dummyjson.com/products')
     let navigate = useNavigate()
 
-    useEffect(() => {
-        getData()
+    // useEffect(() => {
+    //    getData()
+    // }, [loading])
 
-    }, [])
+    // const getData = async () => {
+    //     console.log("running get data")
+    //     // const response = await fetch("https://jsonplaceholder.typicode.com/users")
+    //     // const userData = await response.json()
 
-    const getData = async () => {
-        // const response = await fetch("https://jsonplaceholder.typicode.com/users")
-        // const userData = await response.json()
-
-        const data = await axios.get('https://dummyjson.com/products')
-        console.log(data , 'axios data')
-        // navigate('counter')
-        // setUser(userData)
-    }
+    //     const {data} = await axios.get('https://dummyjson.com/products')
+    //     console.log(data , 'axios data')
+    //     // navigate('counter')
+    //     setUser(data.products)
+    // }
 
 
+    console.log(data , "data from use Fetch hook")
     return (
         <div>
             <h2>Users List</h2>
 
-            <div className="bg-gray-600">
-                {users.map((data: UserDataInterface, key) => {
-                    // const { id, name, phone, website } = data
+            <div className="">
+                {/* {data.map((data: UserDataInterface, key) => {
+                    const { id, name, title, phone, website } = data
                     return (
                         <div
-                            id="id42dfff2ba1104"
+                            id={id.toString()}
                             className="w-full max-w-[350px]"
                             style={{ opacity: 1, transform: "none" }}
                         >
@@ -119,7 +123,7 @@ function UsersList() {
                                         </div>
                                     </div>
                                     <h4 className="flex justify-between font-medium capitalize duration-200 group-hover:text-accent">
-                                        <span>The Delux Network</span>
+                                        <span>{title}</span>
                                         <span className="mr-1">2024</span>
                                     </h4>
                                 </div>
@@ -127,7 +131,7 @@ function UsersList() {
                         </div>
 
                     )
-                })}
+                })} */}
             </div>
 
         </div>

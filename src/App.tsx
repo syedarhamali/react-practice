@@ -22,8 +22,8 @@ function App() { //component
       <Input type='email' eyeIcon={false} placeholder='Enter your email' /> */}
 
       <UsersList />
-      <Example />
-      <NavLink to="/counter">Go to Counter</NavLink> <br />
+      {/* <Example /> */}
+      {/* <NavLink to="/counter">Go to Counter</NavLink> <br /> */}
       <a href="/counter">Go to Counter</a>
     </>
   )

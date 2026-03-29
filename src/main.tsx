@@ -11,6 +11,7 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/react-practice" element={<App />} />
         <Route path="/react-practice/counter" element={<Counter />} />
+        <Route path="/react-practice/arham" element={<App />} />
       </Routes>
 
     </BrowserRouter>
