@@ -4,6 +4,7 @@ import './index.css'
 import { BrowserRouter, Route, Routes } from "react-router";
 import App from './App.tsx'
 import Counter from './components/counter/index.tsx';
+ import { ToastContainer } from 'react-toastify';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -15,5 +16,6 @@ createRoot(document.getElementById('root')!).render(
       </Routes>
 
     </BrowserRouter>
+    <ToastContainer />
   </StrictMode>,
 )
