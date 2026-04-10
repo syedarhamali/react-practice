@@ -1,10 +1,16 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { useContext } from 'react';
+import { Link } from 'react-router';
 import { toast } from 'react-toastify';
+import { AppContext } from '../../context';
 
 function LoginPage() {
+    const {theme , ToggleTheme } = useContext(AppContext)
+
+    console.log(theme , "theme from context")
     return (
-        <>
-        <h1 className='text-4xl font-bold '>Login</h1>
+        <div className={`${theme === 'light' ? 'bg-white text-black' : 'bg-black text-white'} ` }>
+        <h1 className='text-4xl font-bold '>Login</h1> <button onClick={() => ToggleTheme()}>Dark/Light Mode</button>
         <Formik
             initialValues={{ email: '', password: '' }}
             validate={values => {
@@ -40,10 +46,11 @@ function LoginPage() {
                     <button className='bg-black text-white' type="submit" disabled={isSubmitting}>
                          {isSubmitting ? "Submitting..." : "Submit"}
                     </button>
+                    <Link to="/react-practice/counter" className='text-blue-500 underline'>Go to Counter</Link>
                 </Form>
             )}
         </Formik>
-        </>
+        </div>
     )
 }
 

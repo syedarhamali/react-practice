@@ -1,6 +1,10 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { AppContext } from "../../context"
 
 function Counter() {
+        const {theme } = useContext(AppContext)
+    
+        console.log(theme , "theme from context")
     //   variable name , variable update function 
     const [count, setCount] = useState(0)
     // var count = 0
@@ -17,7 +21,7 @@ function Counter() {
     }
 
     return (
-        <div>
+        <div className={`${theme === 'light' ? 'bg-white text-black' : 'bg-black text-white'}`}>
             <p>{count}</p>
 
             <button onClick={incrementCounter}>Increment</button>

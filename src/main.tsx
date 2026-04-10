@@ -4,18 +4,22 @@ import './index.css'
 import { BrowserRouter, Route, Routes } from "react-router";
 import App from './App.tsx'
 import Counter from './components/counter/index.tsx';
- import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
+import AppContextProvider from './context/index.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/react-practice" element={<App />} />
-        <Route path="/react-practice/counter" element={<Counter />} />
-        <Route path="/react-practice/arham" element={<App />} />
-      </Routes>
+    <AppContextProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/react-practice" element={<App />} />
+          <Route path="/react-practice/counter" element={<Counter />} />
+          <Route path="/react-practice/arham" element={<App />} />
+        </Routes>
 
-    </BrowserRouter>
+      </BrowserRouter>
+    </AppContextProvider>
+
     <ToastContainer />
   </StrictMode>,
 )
